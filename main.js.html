@@ -1,0 +1,46 @@
+/**
+* Dicers add on
+*/
+
+window.onload = function() {
+
+  // set up client app structure
+  App.initialize();
+
+  // setup and initilialization
+  Process.initialize()
+   .then (function (elementer) { 
+
+      // set any listeners
+      var homePromise = Home.initialize();
+      
+      // if we need to clean up saved for this document, do that too
+      var clearPromise = Client.clearSheetDicers();
+
+      // get the interactor ready to use
+      Process.control.dicer.interactor = Interactor.setup(Process.control.dicer.diceable);
+      
+      // set up initial scrolling value
+      Interactor.enableRestrictions(Process.control.dicer.interactor , !elementer.getElements().controls.allowScroll.checked);
+
+      // set up the Dicers ready to use
+      Dicers.init();
+      
+
+      Promise
+      .all([homePromise, clearPromise])
+      .then(function (data) {
+        // get some data to the client and start
+        Client.start();
+        // remind about subscrioption
+        Process.reminder();
+       })
+       ['catch'](function(err) {
+          App.showNotification ("error initializing Home", err);
+       });
+   });
+   
+};
+
+
+
