@@ -1,0 +1,164 @@
+<div id="content-wrapper">
+  <ul class="mui-tabs__bar mui-tabs__bar--justified">
+    <li class="mui--is-active"><a data-mui-toggle="tab" data-mui-controls="container">Dicers</a></li>
+    <li><a data-mui-toggle="tab" data-mui-controls="elementer-root">Settings</a></li>
+    <li><a data-mui-toggle="tab" data-mui-controls="stripe-pay">Upgrade</a></li>
+    <li><a data-mui-toggle="tab" data-mui-controls="about-dicers">About</a></li>
+    
+  </ul>
+
+  <div class="padding"></div>
+  <div id="container" class="mui-tabs__pane mui--is-active mui-container">
+
+    <div id="page-data-content">
+
+      <div id="dicearea"></div>
+      <div id="dicer-select" class="mui-panel mui--hide ontop"></div>
+      <div id="tooltip-remove" class="mui--hide tooltip mu-panel  mui--z2">Remove dicer</div>
+      <div id="tooltip-descending" class="mui--hide tooltip mu-panel  mui--z2">Sort descending</div>
+      <div id="tooltip-ascending" class="mui--hide tooltip mu-panel  mui--z2">Sort ascending</div>
+      <div id="tooltip-cancel" class="mui--hide tooltip mu-panel  mui--z2">Clear filters</div>
+      <div id="tooltip-multi" class="mui--hide tooltip mu-panel  mui--z2">Select multiple values</div>
+      <div id="tooltip-single" class="mui--hide tooltip mu-panel  mui--z2">Select single value</div>
+      <div id="tooltip-color" class="mui--hide tooltip mu-panel  mui--z2">Filter by background color</div>
+      <div id="tooltip-values" class="mui--hide tooltip mu-panel  mui--z2">Filter by values</div>
+      <div id="tooltip-or" class="mui--hide tooltip mu-panel  mui--z2">Or filter</div>
+      <div id="tooltip-and" class="mui--hide tooltip mu-panel  mui--z2">And filter</div>
+      <div id="tooltip-not" class="mui--hide tooltip mu-panel  mui--z2">Include not selected items</div>
+      <div id="tooltip-notnot" class="mui--hide tooltip mu-panel  mui--z2">Include selected items</div>
+      <div id="tooltip-blow" class="mui--hide tooltip mu-panel  mui--z2"></div>
+
+
+      <div class="mui-panel mui--hide" id="instructions">
+
+        <p>The Dicers add-on adds functionality to Sheets in some of the same ways as Slicers do for Excel. The unique values in selected columns are shown in 'Dicers'. Selecting one or more of these values will limit the data shown in the sheet to include
+          only the rows that contain these values.
+        </p>
+        <p>Changes in data are detected automatically, as are movements between sheets.</p>
+
+        <p>You can generate some sample data to play around with here</p>
+        <div class="padding"></div>
+        <button id="generate-button" class="create">GENERATE</button>
+
+
+      </div>
+
+      <div id="main-buttons" class="bottom">
+        <div class="button-item">
+          <button id="insert-button" class="action" disabled>ADD</button>
+        </div>
+
+        <div class="button-item">
+          <button id="clear-button" class="" disabled>CLEAR ALL</button>
+        </div>
+        
+        <div class="button-item">
+          <button id="pause-button" disabled>PAUSE</button>
+        </div>
+        
+
+      </div>
+    </div>
+  </div>
+  <div id="elementer-root" class="mui-tabs__pane mui-container">
+    <div id="elementer-content"></div>
+  </div>
+
+  <div id="stripe-pay" class="mui-tabs__pane mui-container">
+    
+    <div class="mui-container">
+     <div class="mui-panel panel-text mui--text-body2">Pro features</div>
+     <p>
+     Dicers Pro adds features such as
+     </p>
+     <ul>
+     <li>Find tables automatically on complex pages</li>
+     <li>Filter by background color</li>
+     <li>Save individual Dicer settings across sessions and sheets</li>
+     <li>Apply OR and NOT operations across Dicers</li>
+     </ul>
+     
+     <div id="not-subscribed">
+       <div class="mui-panel panel-text mui--text-body2">Get unlimited access for a year</div>
+       <p>
+         Unlock Pro features for just <span id="subscription-charge"></span> USD
+       </p>
+       <button class="action" id="pay" disabled>BUY NOW</button>
+     </div>
+
+
+     <div id="subscribed" class="mui--hide">
+       <h4>Your <span id="subscribed-plan"></span> subscription is valid through</h4>
+       <div id="runs-out" class="mui--text-caption"></div>
+       <div class="padding"></div>
+       <button class="action" id="pay-extend" disabled>EXTEND</button>
+     </div>
+    </div>
+  </div>
+  
+
+  <div id="about-dicers" class="mui-tabs__pane mui-container">
+    <div class="mui-panel panel-text mui--text-subhead">What are Dicers?</div>
+    <div>
+     The Dicers add-on provides a simple and visual way of applying filters to data in Google Sheets, and is similar in function and appearance to 
+     Slicers in Excel. 
+     </div>
+     <br>
+
+     <div>
+     <div class="mui-panel panel-text mui--text-body2">Dicer features - standard edition</div>
+          <div>Any column in a table can become a Dicer. Selecting value(s) will filter 
+     the rows in the sheet according to the values selected in each of the dicers.</div>
+     <div class="mui--text-caption"><br>
+     <ul>
+     <li>Automatically detects data changes</li>
+     <li>Underlying value types are used for sorting</li>
+     <li>Select single or multiple filter values</li>
+     <li>Resize or rearrange the Dicers</li>
+     <li>Icons ands label have tooltips</li>
+     <li>Tailor behavior and appearance</li>
+     <li>Save settings at document or user level</li>
+     <li>Pause and restart filtering</li>
+     </ul>
+     </div>
+     </div>
+     <br>
+     
+     <div>
+     <div class="mui-panel panel-text mui--text-body2">
+     Pro edition
+     </div>
+        
+     <div>The Pro edition has all the features of the Standard eidtion, but has additional
+     capabilities, some of which are shown below</div><br>
+     <div class="mui--text-caption">
+     <ul>
+     <li>Find tables automatically on complex pages</li>
+     <li>Filter by background color</li>
+     <li>Save individual Dicer settings across sessions and sheets</li>
+     <li>Apply OR and NOT operations across Dicers</li>
+     </ul>
+     </div>
+     
+     </div>
+     
+    <p>Additional assistance with using this add-on is available at
+      <a href="http://ramblings.mcpher.com/Home/excelquirks/addons/dicers" target="_blank">desktop liberation</a></p>
+
+  </div>
+  <div id="notification-area" class="notification mui--hide">
+    <div class="notification-header">
+      <span id="notification-header" class="notification-header-content"></span>
+      <span id="notification-close" class="mui--pull-right"><i class="mui--text-light material-icons">close</i></span>
+    </div>
+    <div id="notification-message" class="notification-message"></div>
+  </div>
+
+  <div class="spinner-container" id="spinner">
+    <svg class="spinner" width="33px" height="33px" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg">
+        <circle class="path" fill="none" stroke-width="4" stroke-linecap="round" cx="17" cy="17" r="15"></circle>
+      </svg>
+  </div>
+  
+
+</div>
